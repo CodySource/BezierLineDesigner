@@ -1,0 +1,11 @@
+{
+  "name": "com.codysource.bezierlinedesigner",
+  "version": "1.0.0",
+  "displayName": "Bezier Line Designer",
+  "description": "This package provides a simple tool for designing & drawing bezier curves with a line renderer. An example prefab is included.",
+  "unity": "2020.3",
+  "unityRelease": "15f2",
+  "author": {
+    "name": "Cody Source"
+  }
+}
