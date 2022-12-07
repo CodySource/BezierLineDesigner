@@ -20,8 +20,8 @@ namespace CodySource
 
         [SerializeField] private bool _areHandlesHome = false;
         [SerializeField] private bool _mirrorHandleMovements = false;
-        [SerializeField] [Range(1f, 100f)] private float _anchorSize = 10f;
-        [SerializeField] [Range(1f, 100f)] private float _handleSize = 10f;
+        [SerializeField] [Range(1, 100)] private float _anchorSize = 10f;
+        [SerializeField] [Range(1, 100)] private float _handleSize = 10f;
         private Dictionary<string, Vector3> _cachedHandles;
 
         #endregion
