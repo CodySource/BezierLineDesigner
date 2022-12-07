@@ -20,8 +20,8 @@ namespace CodySource
 
         [SerializeField] private bool _areHandlesHome = false;
         [SerializeField] private bool _mirrorHandleMovements = false;
-        [SerializeField] [Range(0.1f, 2f)] private float _anchorSize = 0.5f;
-        [SerializeField] [Range(0.1f, 2f)] private float _handleSize = 0.5f;
+        [SerializeField] [Range(1f, 100f)] private float _anchorSize = 10f;
+        [SerializeField] [Range(1f, 100f)] private float _handleSize = 10f;
         private Dictionary<string, Vector3> _cachedHandles;
 
         #endregion
@@ -61,11 +61,11 @@ namespace CodySource
             for (int i = 0; i < _anchors.childCount; i++)
             {
                 Gizmos.color = Color.green;
-                Gizmos.DrawCube(_anchors.GetChild(i).position, Vector3.one * _anchorSize);
+                Gizmos.DrawCube(_anchors.GetChild(i).position, Vector3.one * _anchorSize / 100f);
                 for (int c = 0; c < _anchors.GetChild(i).childCount; c++)
                 {
                     if (i < _anchors.childCount - 1) Gizmos.DrawLine(_anchors.GetChild(i).GetChild(c).position, _anchors.GetChild((c % 2 == 0) ? i : i + 1).position);
-                    if (i < _anchors.childCount - 1) Gizmos.DrawWireSphere(_anchors.GetChild(i).GetChild(c).position, _handleSize);
+                    if (i < _anchors.childCount - 1) Gizmos.DrawWireSphere(_anchors.GetChild(i).GetChild(c).position, _handleSize / 100f);
                 }
             }
         }
